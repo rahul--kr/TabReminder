@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Tab Alarm</title>
+		<link rel="stylesheet" href="../styles/calendarview.css">
+		<link rel="stylesheet" href="../styles/set_options.css">
+	</head>
+
+	<body>
+		<div id="all">
+			<div id="links">
+				<button id="review-button">View all alarms</button> <br/>
+			</div>
+			
+			<div id="options">
+				<div id="set-calendar">
+					<span>Date:</span>
+					<div id="new-site">
+						<div id="embedded-calendar"></div>
+						<div id="embedded-date-field">Selected Date</div>
+					</div>
+					<div id="edit-site">
+						<div class="inputs" id="calendar-button">date</div>
+						<!-- <input class="inputs" type="text" id="calendar-button" /> -->
+					</div>
+				</div> <br />
+
+				<div id="set-url">
+					<span>URL:</span> <br/>
+					<input type="text" class="inputs" />
+				</div> <br />
+
+				<div id="set-time">
+					<span>Time:</span> <br/>
+					<input type="time" class="inputs" />
+				</div> <br />
+
+				<div id="set-repeat">
+					<span>Repeat:</span> <br/>
+					<select class="inputs">
+						<option value="once">Once</option>
+						<option value="daily">Daily</option>
+						<option value="weekly">Weekly</option>
+						<option value="monthly">Monthly</option>
+					</select>
+				</div> <br />
+			</div>
+
+			<div id="controls">
+				<button type="button" class="buttons" id="save-button">OK</button>
+				<button type="button" class="buttons" id="reset-button">Reset</button>
+				<button type="button" class="buttons" id="cancel-button">Cancel</button>
+			</div>
+		</div>
+
+		<script src="../scripts/prototype.js"></script>
+		<script src="../scripts/calendarview.js"></script>
+		<script src="../scripts/set_options.js"></script>
+		<script src="../scripts/handle_data.js"></script>
+		<script src="../scripts/handle_button_clicks.js"></script>
+	</body>
+</html>

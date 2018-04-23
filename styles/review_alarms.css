@@ -1,0 +1,38 @@
+table {
+	border: 1px solid black;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+table td, table  th {
+	border: 1px solid black;
+	text-align: center;
+}
+
+#edit-col, #del-col {
+	width: 5%;
+}
+
+#url-col {
+	width: 50%;
+}
+
+#date-col, #time-col, #rep-col {
+	width: 15%;
+}
+
+.edit-site, .delete-site {
+	cursor: pointer;
+}
+
+.odd-row {
+	background-color: #f3f3f3;
+}
+
+.even-row {
+	background-color: #ffffff;
+}
+
+table tbody tr:hover {
+	background-color: #e5e5e5 !important;
+}

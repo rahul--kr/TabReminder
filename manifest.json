@@ -1,0 +1,35 @@
+{
+	"manifest_version": 2,
+	"name": "Tab Alarm",
+	"version": "1.0",
+
+	"description": "Opens a specified web-page at a specified time in a new tab.",
+
+	"icons": {
+		"48": "icons/icon-48.png",
+		"240": "icons/icon-240.png"
+	},
+	
+	"permissions": [
+		"<all_urls>",
+		"tabs",
+		"idle",
+		"storage",
+		"unlimitedStorage"
+	],
+
+	"browser_action": {
+		"default_icon": "icons/icon-32.png",
+		"default_title": "Tab Alarm",
+		"default_popup": "views/set_options.html"
+	},
+
+	"background": {
+		"scripts": ["background.js"]
+	},
+
+	"content_scripts": [{
+		"matches": ["*://ourgoalplan.com/*"],
+		"js": ["scripts/goals.js"]
+	}]
+}
