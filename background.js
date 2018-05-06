@@ -31,6 +31,7 @@ function loadSite() {
 		*/
 		toOpen = false;
 		switch(currentSiteData.repeat) {
+			// TODO: set 'lastRun' for all the cases
 			case 'once':
 				if( startDateTime >= currentSiteData.lastRun && !currentSiteData.opened ) toOpen = true;
 				break;
@@ -47,11 +48,13 @@ function loadSite() {
 				if( nextRun >= now ) toOpen = true;
 				break;
 			case 'monthly':
-				if( currentSiteData.opened ) {
-					
-				} else {
-					
-				}
+				// special adjustment for last day of months
+				currentSiteData.opened ?
+				nextRun = new Date(currentSiteData.lastRun.getFullYear(), currentSiteData.lastRun.getMonth() + 1, dateArray[2], timeArray[0], timeArray[1], 0):
+				nextRun.setMonth(startDateTime.getMonth() + 1);
+				while( nextRun.getMonth() != dateArray[1] ) nextRun.setDate(nextRun.getDate() - 1);
+				if( nextRun >= now ) toOpen = true;
+				break;
 		}
 		if( toOpen ) {
 			console.log(currentSiteData.url);
